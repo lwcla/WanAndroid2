@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="black_eeeeee" tools:ignore="ResourceName">#eeeeee</color>
+    <color name="white_00000000" tools:ignore="ResourceName">#00000000</color>
+
+    <color name="ff333333_ff999999" tools:ignore="ResourceName">#999999</color>
+    <color name="fff6f6f6_00000000" tools:ignore="ResourceName">#00000000</color>
+
+</resources>

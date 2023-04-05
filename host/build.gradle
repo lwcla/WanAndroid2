@@ -1,0 +1,80 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+def getGitHash = { ->
+    def stdout = new ByteArrayOutputStream()
+    exec {
+        commandLine 'git', 'rev-parse', '--short', 'HEAD'
+        standardOutput = stdout
+    }
+
+    return stdout.toString().trim()
+}
+
+static def timeStampVerCode() {
+    def now = (int) (System.currentTimeMillis() / (12 * 60 * 60 * 1000))
+    return now
+}
+
+android {
+    namespace 'com.cla.wan.android2'
+    compileSdk libs.versions.compileSdk.get().toInteger()
+
+    defaultConfig {
+        applicationId "com.cla.wan.android2"
+        minSdk libs.versions.minSdk.get().toInteger()
+        targetSdk libs.versions.targetSdk.get().toInteger()
+        versionCode timeStampVerCode()
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.2.0'
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+}
+
+dependencies {
+    implementation libs.bundles.android
+    implementation libs.bundles.compose.ui
+    implementation libs.bundles.lifecycle
+    implementation libs.constraintlayout
+
+    testImplementation libs.junit
+    androidTestImplementation libs.bundles.junit.test
+
+    androidTestImplementation libs.compose.ui.test.junit4
+    debugImplementation libs.bundles.compose.ui.test
+
+    implementation libs.cla.round.view
+
+    implementation project(path: ':common_ui')
+    implementation project(path: ':common_utils')
+}

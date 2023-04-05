@@ -1,0 +1,16 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+project.ext.moduleName = "com.cla.wan.common.ui"
+project.ext.resourcePrefix = "common_ui_"
+
+apply from: '../component_build.gradle'
+
+dependencies {
+    implementation libs.cla.round.view
+    implementation libs.android.auto.size
+
+    implementation project(path: ':common_utils')
+}

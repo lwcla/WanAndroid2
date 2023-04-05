@@ -5,12 +5,72 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
+
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
+        maven { url "https://jitpack.io" }
+    }
+
+    versionCatalogs {
+        libs {
+            version('compileSdk', '33')
+            version('minSdk', '24')
+            version('targetSdk', '33')
+
+            //androidx
+            library('core-ktx', 'androidx.core:core-ktx:1.7.0')
+            library('appcompat', 'androidx.appcompat:appcompat:1.6.1')
+            library('activity-compose', 'androidx.activity:activity-compose:1.3.1')
+            library('material', 'com.google.android.material:material:1.8.0')
+            library('fragment-ktx', 'androidx.fragment:fragment-ktx:1.5.5')
+            //依赖组
+            bundle('android', ['core-ktx', 'appcompat', 'activity-compose', 'material', 'fragment-ktx'])
+
+            //compose
+            def compose_version = version('compose-version', '1.2.0')
+            library('compose-ui', 'androidx.compose.ui', 'ui').versionRef(compose_version)
+            library('compose-ui-tooling-preview', 'androidx.compose.ui', 'ui-tooling-preview').versionRef(compose_version)
+            library('compose-material', 'androidx.compose.material', 'material').versionRef(compose_version)
+            //compose 单元测试
+            library('compose-ui-test-junit4', 'androidx.compose.ui', 'ui-test-junit4').versionRef(compose_version)
+            library('compose-ui-tooling', 'androidx.compose.ui', 'ui-tooling').versionRef(compose_version)
+            library('compose-ui-test-manifest', 'androidx.compose.ui', 'ui-test-manifest').versionRef(compose_version)
+            //依赖组
+            bundle('compose-ui', ['compose-ui', 'compose-ui-tooling-preview', 'compose-material'])
+            bundle('compose-ui-test', ['compose-ui-tooling', 'compose-ui-test-manifest'])
+
+            //lifecycle
+            def lifecycle_version = version('lifecycle-version', '2.5.1')
+            library('lifecycle-viewmodel-ktx', 'androidx.lifecycle', 'lifecycle-viewmodel-ktx').versionRef(lifecycle_version)
+            library('lifecycle-viewmodel-compose', 'androidx.lifecycle', 'lifecycle-viewmodel-compose').versionRef(lifecycle_version)
+            library('lifecycle-livedata-ktx', 'androidx.lifecycle', 'lifecycle-livedata-ktx').versionRef(lifecycle_version)
+            library('lifecycle-viewmodel-savedstate', 'androidx.lifecycle', 'lifecycle-viewmodel-savedstate').versionRef(lifecycle_version)
+            library('lifecycle-process', 'androidx.lifecycle', 'lifecycle-process').versionRef(lifecycle_version)
+            bundle('lifecycle', ['lifecycle-viewmodel-ktx', 'lifecycle-viewmodel-compose', 'lifecycle-livedata-ktx', 'lifecycle-viewmodel-savedstate', 'lifecycle-process'])
+
+            //单元测试
+            library('junit', 'junit:junit:4.13.2')
+            library('junit-ext', 'androidx.test.ext:junit:1.1.5')
+            library('espresso-core', 'androidx.test.espresso:espresso-core:3.5.1')
+            bundle('junit-test', ['junit-ext', 'espresso-core'])
+
+            //控件
+            library('constraintlayout', 'androidx.constraintlayout:constraintlayout:2.1.4')
+
+            //第三方库
+            //工具类 https://github.com/Blankj/AndroidUtilCode/blob/master/lib/utilcode/README-CN.md
+            library('utilcodex', 'com.blankj:utilcodex:1.31.1')
+            //背景控件 https://github.com/lwcla/ClaRoundView
+            library('cla_round_view', 'io.github.lwcla:cla_round_view:1.0.13')
+            //屏幕适配 https://github.com/JessYanCoding/AndroidAutoSize
+            library('android_auto_size', 'com.github.JessYanCoding:AndroidAutoSize:v1.2.1')
+        }
     }
 }
 rootProject.name = "WanAndroid2"
-include ':app'
+include ':host'
+include ':common_utils'
+include ':common_ui'

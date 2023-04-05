@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clContent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    tools:parentTag="android.widget.LinearLayout">
+
+    <RelativeLayout
+        android:id="@+id/rlLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="@color/purple_200"
+        tools:layout_height="50dp"
+        tools:layout_width="40dp" />
+
+    <RelativeLayout
+        android:id="@+id/rlCenter"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/rlRight"
+        app:layout_constraintStart_toEndOf="@id/rlLeft"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="@color/purple_500"
+        tools:layout_height="50dp" />
+
+    <RelativeLayout
+        android:id="@+id/rlRight"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="end"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="@color/teal_200"
+        tools:layout_height="50dp"
+        tools:layout_width="40dp" />
+
+</merge>

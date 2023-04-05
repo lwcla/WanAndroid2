@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <declare-styleable name="ClaTitleBar" tools:ignore="ResourceName">
+        <attr name="title_bar_bottom_line_height" format="dimension" />
+        <attr name="title_bar_style" format="enum">
+            <enum name="none" value="0" />
+        </attr>
+    </declare-styleable>
+
+</resources>

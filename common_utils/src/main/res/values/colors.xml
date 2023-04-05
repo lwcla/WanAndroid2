@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="purple_200" tools:ignore="ResourceName">#FFBB86FC</color>
+    <color name="purple_500" tools:ignore="ResourceName">#FF6200EE</color>
+    <color name="purple_700" tools:ignore="ResourceName">#FF3700B3</color>
+    <color name="teal_200" tools:ignore="ResourceName">#FF03DAC5</color>
+    <color name="teal_700" tools:ignore="ResourceName">#FF018786</color>
+    <color name="black_eeeeee" tools:ignore="ResourceName">#FF000000</color>
+    <color name="white_00000000" tools:ignore="ResourceName">#FFFFFFFF</color>
+    <color name="transparent" tools:ignore="MissingDefaultResource,ResourceName">#00000000</color>
+
+    <color name="ff333333_ff999999" tools:ignore="ResourceName">#333333</color>
+    <color name="fff6f6f6_00000000" tools:ignore="ResourceName">#F6F6F6</color>
+
+    <color name="c1" tools:ignore="ResourceName">#1D6FE9</color>
+    <color name="c2" tools:ignore="ResourceName">#ffa208</color>
+    <color name="c3" tools:ignore="ResourceName">#e76262</color>
+    <color name="c4" tools:ignore="ResourceName">#333333</color>
+    <color name="c5" tools:ignore="ResourceName">#666666</color>
+    <color name="c6" tools:ignore="ResourceName">#999999</color>
+    <color name="c7" tools:ignore="ResourceName">#c8c8c8</color>
+    <color name="c8" tools:ignore="ResourceName">#eeeeee</color>
+    <color name="c9" tools:ignore="ResourceName">#F6F6F6</color>
+    <color name="c10" tools:ignore="ResourceName">#EAF0F0</color>
+    <color name="c11" tools:ignore="ResourceName">#DDDDDD</color>
+    <color name="c12" tools:ignore="ResourceName">#CCCCCC</color>
+</resources>

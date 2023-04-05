@@ -1,0 +1,13 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+project.ext.moduleName = "com.cla.wan.common.utils"
+project.ext.resourcePrefix = "common_utils_"
+
+apply from: '../component_build.gradle'
+
+dependencies {
+    implementation libs.utilcodex
+}
