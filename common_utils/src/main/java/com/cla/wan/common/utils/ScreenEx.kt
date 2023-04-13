@@ -14,9 +14,7 @@ val screenWidth: Int
 val screenHeight: Int
     get() = ScreenUtils.getScreenHeight()
 
-/**
- * 屏幕中除了状态栏和导航栏的高度
- */
+/** 屏幕中除了状态栏和导航栏的高度 */
 val screenContentHeight: Int
     get() = screenHeight - statusBarHeight - navBarHeight
 
